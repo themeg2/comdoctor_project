@@ -1,0 +1,578 @@
+/* 기본 스타일 */
+body {
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 헤더 */
+header {
+    background: linear-gradient(135deg, #2980b9, #3498db); /* 그라디언트 배경 추가 */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    background-color: transparent; /* 로고 배경 투명으로 변경 */
+    padding: 5px;
+    margin-right: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo img {
+    height: 200px; /* 로고 크기 증가 */
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.2)); /* 로고에 그림자 효과 추가 */
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05); /* 호버 시 로고가 살짝 커지는 효과 */
+}
+
+.logo-text h1 {
+    margin: 0;
+    font-size: 2.4em; /* 제목 크기 증가 */
+    color: white;
+    font-weight: 800; /* 더 두꺼운 폰트 */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 텍스트 그림자 */
+    letter-spacing: -0.5px; /* 글자 간격 조정 */
+}
+
+.logo-text p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+    color: #ecf0f1;
+    font-weight: 500; /* 약간 더 두꺼운 서브타이틀 */
+}
+
+.contact-info {
+    text-align: right;
+    position: relative;
+    background: rgba(0, 0, 0, 0.1); /* 반투명 배경 */
+    padding: 10px 15px;
+    border-radius: 8px;
+    border-left: 4px solid #ffeb3b; /* 왼쪽 테두리 강조 */
+}
+
+.phone {
+    font-size: 2em; /* 전화번호 크기 증가 */
+    font-weight: bold;
+    color: #ffeb3b; /* 전화번호 색상 노란색 */
+    text-decoration: none;
+    display: block;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.phone:hover {
+    color: white;
+    transform: scale(1.03);
+}
+
+.repair-time {
+    color: white;
+    margin: 5px 0 0;
+    font-weight: 600;
+    font-size: 1.1em;
+    position: relative;
+    padding-left: 20px;
+}
+
+.repair-time:before {
+    content: "🕒"; /* 시계 이모지 추가 */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 프로모션 배너 */
+.promotion-banner {
+    background-color: #27ae60;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* 서비스 섹션 */
+.services {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    color: #2c3e50;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: white;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    color: #27ae60;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    color: #2c3e50;
+}
+
+/* 가격 정보 */
+.pricing {
+    padding: 50px 0;
+}
+
+.pricing h3 {
+    color: #2c3e50;
+    margin-top: 30px;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-table th, .pricing-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.pricing-table th {
+    background-color: #3498db; /* 테이블 헤더 색상 변경 */
+    color: white;
+}
+
+.pricing-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.pricing-note {
+    text-align: center; 
+    margin-top: 30px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* 서비스 지역 */
+.service-area {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.service-area-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.service-area-text {
+    width: 48%;
+}
+
+.service-area-text h3 {
+    color: #2c3e50;
+}
+
+.service-area-text ul {
+    padding-left: 20px;
+}
+
+.service-area-text li {
+    margin-bottom: 8px;
+}
+
+.service-area-map {
+    width: 48%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 연락처 섹션 */
+.contact {
+    padding: 50px 0;
+}
+
+.contact-button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #219653;
+}
+
+.contact-direct {
+    text-align: center; 
+    margin-top: 30px;
+}
+
+.contact-direct a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.contact-direct a:hover {
+    text-decoration: underline;
+}
+
+/* 플로팅 문의 폼 */
+.floating-contact-form {
+    position: fixed; /* 고정 위치 유지 */
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 999;
+    transition: all 0.3s ease;
+    cursor: move; /* 드래그 가능함을 표시하는 커서 */
+}
+
+.floating-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    cursor: move; /* 드래ג 포인터 표시 */
+    user-select: none; /* 텍스트 선택 방지 */
+}
+
+.floating-form-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.minimize-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.3em;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+}
+
+.floating-form-content {
+    padding: 15px;
+    background-color: #f8f9fa; /* 폼 배경색 추가 */
+    border-top: 1px solid #e9ecef; /* 구분선 추가 */
+}
+
+.floating-form-minimized {
+    display: none;
+    width: 100%;
+}
+
+.floating-form-minimized button {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating-form-minimized button i {
+    margin-left: 8px;
+    font-size: 0.9em;
+}
+
+.floating-contact-form.minimized {
+    width: 200px;
+    height: auto;
+}
+
+.floating-contact-form.minimized .floating-form-content {
+    display: none;
+}
+
+.floating-contact-form.minimized .floating-form-minimized {
+    display: block;
+}
+
+/* 컴팩트 폼 스타일 */
+.contact-form.compact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form.compact .form-field {
+    width: 100%;
+}
+
+.contact-form.compact input,
+.contact-form.compact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    font-size: 0.9em;
+    box-sizing: border-box; /* 추가: 박스 크기에 패딩과 테두리 포함 */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* 추가: 입력 필드 내부 그림자 */
+    background-color: #fff; /* 추가: 배경색 명시 */
+}
+
+.contact-form.compact textarea {
+    resize: none;
+    height: 70px;
+    border: 1px solid #ccc; /* 테두리 색상 더 진하게 */
+}
+
+/* 추가: 포커스 효과 향상 */
+.contact-form.compact input:focus,
+.contact-form.compact textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.contact-form.compact button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form.compact button:hover {
+    background-color: #219653;
+}
+
+/* 팝업 문의 폼 */
+.contact-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-popup.show {
+    display: flex;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.contact-popup-content {
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3498db;
+    color: white;
+    padding: 15px 20px;
+}
+
+.popup-header h3 {
+    margin: 0;
+    font-size: 1.4em;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+.contact-popup .contact-form {
+    padding: 20px;
+}
+
+/* 문의 폼 스타일 */
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-form .full-width {
+    grid-column: 1 / -1;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+    font-size: 1em;
+}
+
+.contact-form textarea:focus, .contact-form input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.contact-form button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-size: 1.1em;
+}
+
+.contact-form button:hover {
+    background-color: #219653;
+}
+
+.form-submit {
+    text-align: center;
+}
+
+/* 푸터 */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo {
+        flex-direction: column;
+    }
+    
+    .logo-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .contact-info {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .service-area-content {
+        flex-direction: column;
+    }
+    
+    .service-area-text, .service-area-map {
+        width: 100%;
+    }
+    
+    .service-area-map {
+        margin-top: 30px;
+    }
+    
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+}  
