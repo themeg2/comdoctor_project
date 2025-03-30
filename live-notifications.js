@@ -3,7 +3,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // 접수 알림을 표시할 컨테이너 생성 및 추가
     const notificationContainer = document.createElement('div');
     notificationContainer.className = 'live-notification-container';
-    document.body.appendChild(notificationContainer);
+    document.body.insertBefore(notificationContainer, document.body.firstChild);
+
+    // 알림 슬라이더 영역 생성
+    const notificationSlider = document.createElement('div');
+    notificationSlider.className = 'notification-slider';
+    notificationSlider.style.display = 'flex';
+    notificationSlider.style.alignItems = 'center';
+    notificationSlider.style.overflow = 'hidden';
+    notificationSlider.style.flexGrow = '1';
+    notificationContainer.appendChild(notificationSlider);
 
     // CSS 스타일 추가
     const style = document.createElement('style');
@@ -12,24 +21,29 @@ document.addEventListener('DOMContentLoaded', function() {
             position: fixed;
             left: 0;
             top: 0;
-            width: 300px;
-            height: 100vh;
+            width: 100%;
+            height: 60px;
             background-color: rgba(51, 51, 51, 0.95);
             color: white;
             z-index: 998;
             overflow: hidden;
             font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
         }
 
         .live-notification {
             display: flex;
             padding: 10px 15px;
-            margin: 5px;
+            margin-right: 15px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 30px;
             align-items: center;
-            animation: slideUp 10s linear forwards;
+            animation: slideLeft 15s linear infinite;
             position: relative;
+            white-space: nowrap;
         }
 
         .live-tag {
@@ -51,49 +65,40 @@ document.addEventListener('DOMContentLoaded', function() {
             flex-grow: 1;
         }
 
-        @keyframes slideUp {
+        @keyframes slideLeft {
             0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            80% {
-                opacity: 1;
+                transform: translateX(100%);
             }
             100% {
-                transform: translateY(-500px);
-                opacity: 0;
+                transform: translateX(-100%);
             }
         }
 
         .notification-counter {
-            position: absolute;
-            right: 20px;
-            top: 20px;
+            display: flex;
+            align-items: center;
             background-color: #1B5E20;
             color: white;
-            border-radius: 10px;
-            padding: 15px 25px;
-            font-size: 18px;
+            border-radius: 30px;
+            padding: 8px 15px;
+            font-size: 14px;
             font-weight: bold;
-            text-align: center;
             z-index: 999;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            white-space: nowrap;
         }
 
         .counter-date {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 5px;
+            margin-right: 10px;
         }
 
         .counter-value {
-            font-size: 36px;
-            line-height: 1;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 5px;
         }
 
         .counter-label {
-            font-size: 16px;
-            margin-top: 5px;
+            font-size: 14px;
         }
 
         .detail-button {
@@ -120,21 +125,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')} 현재 접수현황`;
     
     // 초기 카운터 값 설정 (500에서 시작)
-    let counterValue = 500;
+    let counterValue = 544;
     
     counterElement.innerHTML = `
         <div class="counter-date">${dateStr}</div>
         <div class="counter-value">${counterValue}</div>
         <div class="counter-label">건</div>
     `;
-    document.body.appendChild(counterElement);
-
-    // 상세보기 버튼 추가
-    const detailButton = document.createElement('a');
-    detailButton.className = 'detail-button';
-    detailButton.href = '#';
-    detailButton.textContent = '상세보기';
-    notificationContainer.appendChild(detailButton);
+    notificationContainer.appendChild(counterElement);
 
     // 접수 유형 배열
     const serviceTypes = [
@@ -172,12 +170,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="notification-text">${location} | ${serviceType}</div>
         `;
         
-        notificationContainer.appendChild(notification);
+        notificationSlider.appendChild(notification);
         
         // 일정 시간 후 알림 제거
         setTimeout(() => {
             notification.remove();
-        }, 10000);
+        }, 15000);
         
         // 카운터 증가
         counterValue++;
@@ -188,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let i = 0; i < 5; i++) {
         setTimeout(() => {
             createRandomNotification();
-        }, i * 500);
+        }, i * 23);
     }
 
     // 주기적으로 새 알림 생성 (3~8초 간격)
