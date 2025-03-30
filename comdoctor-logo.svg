@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <!-- 배경은 투명하게 유지 -->
+  
+  <!-- 모니터 베이스 - 크기 2배 -->
+  <rect x="200" y="280" width="200" height="40" rx="10" fill="#2c3e50"/>
+  <rect x="270" y="260" width="60" height="20" fill="#2c3e50"/>
+  
+  <!-- 모니터 프레임 - 크기 2배 -->
+  <rect x="150" y="100" width="300" height="200" rx="10" fill="#2c3e50"/>
+  
+  <!-- 모니터 스크린 - 흰색 배경 유지, 크기 2배 -->
+  <rect x="170" y="120" width="260" height="160" fill="#ecf0f1"/>
+  
+  <!-- 녹색 십자가 - 화면 정중앙에 배치, 크기 2배 -->
+  <rect x="260" y="188" width="80" height="24" rx="4" fill="#27ae60"/>
+  <rect x="288" y="160" width="24" height="80" rx="4" fill="#27ae60"/>
+  
+  <!-- 텍스트 - 크기 2배 -->
+  <text x="300" y="360" font-family="Arial, sans-serif" font-size="44" font-weight="bold" text-anchor="middle" fill="#2c3e50">ComDoctor</text>
+</svg>
